@@ -1,12 +1,24 @@
 from django.contrib import admin
 
-from .models import FirstAnswerReview,FirstQuestionReview
-from .models import LateAnswerReview
 # from .models import QuestionEdit
-from .models import CloseQuestionVotes, ReviewQuestionReOpenVotes
-from .models import ReviewCloseVotes,ReOpenQuestionVotes,QuestionEditVotes
-from .models import ReviewQuestionEdit,LowQualityPostsCheck,ReviewLowQualityPosts
-from .models import ReviewFlagPost,FlagComment,ReviewFlagComment,FlagPost
+from .models import (
+    CloseQuestionVotes,
+    FirstAnswerReview,
+    FirstQuestionReview,
+    FlagComment,
+    FlagPost,
+    LateAnswerReview,
+    LowQualityPostsCheck,
+    QuestionEditVotes,
+    ReOpenQuestionVotes,
+    ReviewCloseVotes,
+    ReviewFlagComment,
+    ReviewFlagPost,
+    ReviewLowQualityPosts,
+    ReviewQuestionEdit,
+    ReviewQuestionReOpenVotes,
+)
+
 # admin.site.register(QuestionEdit)
 
 admin.site.register(FirstAnswerReview)

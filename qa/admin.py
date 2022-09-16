@@ -1,15 +1,26 @@
+import adminactions.actions as actions
 from django.contrib import admin
 from django.contrib.admin import site
-import adminactions.actions as actions
-from .models import Question,Answer,Bounty,Reputation,QDownvote
-from .models import ProtectQuestion,CommentQ,QUpvote,BookmarkQuestion
-# from .models import ADownvote,AUpvote
-from .models import BannedUser
 from simple_history.admin import SimpleHistoryAdmin
+
+# from .models import ADownvote,AUpvote
+from .models import (
+    Answer,
+    BannedUser,
+    BookmarkQuestion,
+    Bounty,
+    CommentQ,
+    ProtectQuestion,
+    QDownvote,
+    Question,
+    QUpvote,
+    Reputation,
+)
+
 actions.add_to_site(site)
 
 
-admin.site.register(Question,SimpleHistoryAdmin)
+admin.site.register(Question, SimpleHistoryAdmin)
 
 admin.site.register(BookmarkQuestion)
 

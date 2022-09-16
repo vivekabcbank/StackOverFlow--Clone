@@ -6,8 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tagbadge', '0002_tagbadge'),
+        ("tagbadge", "0002_tagbadge"),
     ]
 
-    operations = [
-    ]
+    operations = []

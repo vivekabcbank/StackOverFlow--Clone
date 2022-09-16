@@ -1,5 +1,6 @@
-from pathlib import Path
 import os
+from pathlib import Path
+
 import django_heroku
 from django.conf import settings
 
@@ -10,49 +11,55 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=dei9kx=^q))zm#z-(_cwdii75e-4bsf5_7suo9ll&besz088u'
+SECRET_KEY = "django-insecure-=dei9kx=^q))zm#z-(_cwdii75e-4bsf5_7suo9ll&besz088u"
 # from django.conf import settings
 settings.configure()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://stackoverflow---clone.herokuapp.com/','localhost','http://127.0.0.1','stackoverflow---clone.herokuapp.com','.herokuapp.com']
+ALLOWED_HOSTS = [
+    "https://stackoverflow---clone.herokuapp.com/",
+    "localhost",
+    "http://127.0.0.1",
+    "stackoverflow---clone.herokuapp.com",
+    ".herokuapp.com",
+]
 
 # Application definition
 
 INSTALLED_APPS = [
-    'adminactions',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.humanize',
+    "adminactions",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "django.contrib.humanize",
     # App
-    'profile',
+    "profile",
     # App
-    'users',
+    "users",
     # App
-    'qa',
+    "qa",
     # App
-    'notification',
+    "notification",
     # App
-    'review',
+    "review",
     # App
-    'tagbadge',
+    "tagbadge",
     # App
-    'help',
-    'taggit',
-    'crispy_forms',
-    'martor',
-    'simple_history',
+    "help",
+    "taggit",
+    "crispy_forms",
+    "martor",
+    "simple_history",
     # 'background_task',
-    'review.templatetags',
-    'tagbadge.tb_templatetags',
-    'online_users',
+    "review.templatetags",
+    "tagbadge.tb_templatetags",
+    "online_users",
     # 'debug_toolbar',
-    'tools',
+    "tools",
 ]
 
 MAX_ATTEMPTS = 1
@@ -60,66 +67,65 @@ MAX_ATTEMPTS = 1
 SECURE_BROWSER_XSS_FILTER = True
 
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
-    'simple_history.middleware.HistoryRequestMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', #add whitenoise
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'online_users.middleware.OnlineNowMiddleware',
+    "simple_history.middleware.HistoryRequestMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # add whitenoise
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "online_users.middleware.OnlineNowMiddleware",
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
-ROOT_URLCONF = 'main.urls'
+ROOT_URLCONF = "main.urls"
 
-TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'review.context_processors.reviewAnswer_cp',
-                'review.context_processors.returnTrue',
-                'review.context_processors.reviewQuestion_cp',
-                'review.context_processors.returnTrue_or_False',
-                'review.context_processors.reviewLateAnswer_cp',
-                'review.context_processors.returnLateReview_True_or_False',
-                'review.context_processors.reviewClosedQuestions',
-                'review.context_processors.returnTrue_or_FalseClosedQuestions',
-                'review.context_processors.reviewReOpenQuestion_sVotes',
-                'review.context_processors.returnTrue_or_FalseUnCloseQuestion_s',
-                'review.context_processors.reviewEditedPosts',
-                'review.context_processors.returnTrue_or_FalseEditPosts',
-                'review.context_processors.reviewLowQualityPosts',
-                'review.context_processors.returnTrue_or_FalseLowPosts',
-                'review.context_processors.reviewFlagPosts',
-                'review.context_processors.returnTrue_or_FalseFlagPosts',
-                'review.context_processors.reviewFlagComments',
-                'review.context_processors.returnTrue_or_FalseFlagComments',
-                'notification.context_processors.privNotificationViewer',
-                'notification.context_processors.notificationViewer',
-                'profile.context_processors.top_questions',
-                'profile.context_processors.count_all_bounties',
-
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [TEMPLATE_DIR],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+                "review.context_processors.reviewAnswer_cp",
+                "review.context_processors.returnTrue",
+                "review.context_processors.reviewQuestion_cp",
+                "review.context_processors.returnTrue_or_False",
+                "review.context_processors.reviewLateAnswer_cp",
+                "review.context_processors.returnLateReview_True_or_False",
+                "review.context_processors.reviewClosedQuestions",
+                "review.context_processors.returnTrue_or_FalseClosedQuestions",
+                "review.context_processors.reviewReOpenQuestion_sVotes",
+                "review.context_processors.returnTrue_or_FalseUnCloseQuestion_s",
+                "review.context_processors.reviewEditedPosts",
+                "review.context_processors.returnTrue_or_FalseEditPosts",
+                "review.context_processors.reviewLowQualityPosts",
+                "review.context_processors.returnTrue_or_FalseLowPosts",
+                "review.context_processors.reviewFlagPosts",
+                "review.context_processors.returnTrue_or_FalseFlagPosts",
+                "review.context_processors.reviewFlagComments",
+                "review.context_processors.returnTrue_or_FalseFlagComments",
+                "notification.context_processors.privNotificationViewer",
+                "notification.context_processors.notificationViewer",
+                "profile.context_processors.top_questions",
+                "profile.context_processors.count_all_bounties",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'main.wsgi.application'
+WSGI_APPLICATION = "main.wsgi.application"
 
 
 # DATABASES
@@ -129,9 +135,9 @@ If you don't want to use postgresql then remove comment of sqlite's configuratio
 comment in the postgresql configuration
 """
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -150,16 +156,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
@@ -167,19 +173,17 @@ CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://127.0.0.1:6379/1",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient"
-        },
-        "KEY_PREFIX": "example"
+        "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
+        "KEY_PREFIX": "example",
     }
 }
 CACHE_TTL = 60 * 15
 
 # Internationalization
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'Asia/Kolkata'
+TIME_ZONE = "Asia/Kolkata"
 
 USE_I18N = True
 
@@ -190,8 +194,8 @@ USE_TZ = True
 
 # os.path.join(BASE_DIR, "static", "static")
 
-#MY SETTINGS FOR LOGIN.
-LOGIN_URL = 'users:login_request'
+# MY SETTINGS FOR LOGIN.
+LOGIN_URL = "users:login_request"
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static'),
@@ -202,47 +206,56 @@ LOGIN_URL = 'users:login_request'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = "/static/"
 
 # Extra places for collectstatic to find static files.
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Heroku setting
 # Serving the statics through Whitenoise in Heroku
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Martor Configuration
-MARTOR_THEME = 'bootstrap'  # semantic
+MARTOR_THEME = "bootstrap"  # semantic
 MARTOR_ENABLE_LABEL = True
 MARTOR_ENABLE_CONFIGS = {
-    'emoji': 'true',        # to enable/disable emoji icons.
-    'imgur': 'true',        # to enable/disable imgur/custom uploader.
-    'mention': 'true',      # to enable/disable mention
-    'jquery': 'true',       # to include/revoke jquery (require for admin default django)
-    'living': 'true',      # to enable/disable live updates in preview
-    'spellcheck': 'true',  # to enable/disable spellcheck in form textareas
-    'hljs': 'true',         # to enable/disable hljs highlighting in preview
+    "emoji": "true",  # to enable/disable emoji icons.
+    "imgur": "true",  # to enable/disable imgur/custom uploader.
+    "mention": "true",  # to enable/disable mention
+    "jquery": "true",  # to include/revoke jquery (require for admin default django)
+    "living": "true",  # to enable/disable live updates in preview
+    "spellcheck": "true",  # to enable/disable spellcheck in form textareas
+    "hljs": "true",  # to enable/disable hljs highlighting in preview
 }
 MARTOR_TOOLBAR_BUTTONS = [
-    'bold', 'italic', 'horizontal', 'heading', 'pre-code',
-    'blockquote', 'unordered-list', 'ordered-list',
-    'link', 'image-link', 'image-upload', 'emoji',
-    'direct-mention', 'toggle-maximize', 'help'
+    "bold",
+    "italic",
+    "horizontal",
+    "heading",
+    "pre-code",
+    "blockquote",
+    "unordered-list",
+    "ordered-list",
+    "link",
+    "image-link",
+    "image-upload",
+    "emoji",
+    "direct-mention",
+    "toggle-maximize",
+    "help",
 ]
 
-CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+CKEDITOR_JQUERY_URL = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 
 # django debug toolbar configuration

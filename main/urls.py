@@ -13,30 +13,31 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path,include
-from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import include, path
+
 from qa import views as qa_views
+
 # import debug_toolbar
 
 handler404 = qa_views.handler404
 handler500 = qa_views.handler500
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('profile.urls')),
-    path('', include('qa.urls')),
-    path('', include('notification.urls')),
-    path('', include('tagbadge.urls')),
-    path('', include('help.urls')),
-    path('', include('review.urls')),
-    path('', include('tools.urls')),
-    path('accounts/',include('users.urls')),
-    path('adminactions/', include('adminactions.urls')),
-    path('martor/', include('martor.urls')),
+    path("admin/", admin.site.urls),
+    path("", include("profile.urls")),
+    path("", include("qa.urls")),
+    path("", include("notification.urls")),
+    path("", include("tagbadge.urls")),
+    path("", include("help.urls")),
+    path("", include("review.urls")),
+    path("", include("tools.urls")),
+    path("accounts/", include("users.urls")),
+    path("adminactions/", include("adminactions.urls")),
+    path("martor/", include("martor.urls")),
     # path('__debug__/', include(debug_toolbar.urls)),
-
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

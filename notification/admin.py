@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Notification,PrivRepNotification
+from .models import Notification, PrivRepNotification
 
 admin.site.register(Notification)
 

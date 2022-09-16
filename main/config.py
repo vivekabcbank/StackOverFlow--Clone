@@ -5,4 +5,3 @@ UPVOTE_TIME_LIMIT = timezone.now() - timedelta(hours=10)
 # NEW USER CAN ASK SECOND QUESTION IN MINUTES.
 # In new_question
 NEW_QUESTION_MINUTE_LIMIT = timezone.now() - timedelta(minutes=90)
-
